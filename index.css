@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-navy: #071426;
+    --color-secondary-navy: #101F35;
+    --color-deep-bg: #09172A;
+    --color-champagne-gold: #D9AD63;
+    --color-light-gold: #F4D49A;
+    --color-warm-ivory: #F7EBDD;
+    --color-cream-surface: #FFF7EC;
+    --color-dark-text: #202331;
+    --color-muted-text: #8D929B;
+    --color-success-green: #65A77B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #071426;
+    color: #202331;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  ::selection {
+    background: #D9AD63;
+    color: #071426;
+  }
+}
+
+/* Luxury gold border & glow utilities */
+.border-gold-subtle {
+  border-color: rgba(217, 173, 99, 0.25);
+}
+
+.border-gold-medium {
+  border-color: rgba(217, 173, 99, 0.45);
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(217, 173, 99, 0.2);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(217, 173, 99, 0.35);
+  border-color: #D9AD63;
+}
+
+.glass-navy {
+  background: rgba(7, 20, 38, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-cream {
+  background: rgba(255, 247, 236, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom sleek gold scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09172A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 173, 99, 0.3);
+  border-radius: 9999px;
+  border: 2px solid #09172A;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D9AD63;
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 173, 99, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(217, 173, 99, 0);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #D9AD63 0%, #F4D49A 50%, #D9AD63 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
